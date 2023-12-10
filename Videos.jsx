@@ -17,7 +17,7 @@ export default function Videos() {
           hasMore={hasMore}
           next={() => setPage(page + 8)}
         >
-          {videos.map((video, index) =>
+          {videos.map((video) =>
             video.noq > 0 ? (
               <Link key={video.youtubeID} to="/quiz">
                 <Video
@@ -28,7 +28,7 @@ export default function Videos() {
               </Link>
             ) : (
               <Video
-                key={index}
+                key={video.youtubeID}
                 title={video.title}
                 id={video.youtubeID}
                 noq={video.noq}
